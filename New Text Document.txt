@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class StudentGradingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter student's name:");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter marks for 5 subjects (out of 100):");
+        
+        int subject1 = scanner.nextInt();
+        int subject2 = scanner.nextInt();
+        int subject3 = scanner.nextInt();
+        int subject4 = scanner.nextInt();
+        int subject5 = scanner.nextInt();
+
+        // Calculate total and average
+        int total = subject1 + subject2 + subject3 + subject4 + subject5;
+        double average = total / 5.0;
+
+        System.out.println("\nStudent Name: " + name);
+        System.out.println("Total Marks: " + total);
+        System.out.println("Average Marks: " + average);
+
+        // Grading system using if-else
+        if (average >= 90) {
+            System.out.println("Grade: A+ (Excellent!)");
+        } else if (average >= 80) {
+            System.out.println("Grade: A (Very Good)");
+        } else if (average >= 70) {
+            System.out.println("Grade: B (Good)");
+        } else if (average >= 60) {
+            System.out.println("Grade: C (Average)");
+        } else if (average >= 50) {
+            System.out.println("Grade: D (Pass)");
+        } else {
+            System.out.println("Grade: F (Fail)");
+        }
+
+        // Additional message
+        if (average < 50) {
+            System.out.println("You need to work harder. Better luck next time!");
+        } else if (average >= 90) {
+            System.out.println("Outstanding performance! Keep it up!");
+        }
+    }
+}
